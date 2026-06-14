@@ -14,9 +14,9 @@
             box-sizing: border-box;
         }
 
-         body {
+        body {
             font-family: 'Inter', sans-serif;
-            background: #ffffff;  /* changed to white */
+            background: #ffffff;
             color: #1e1a16;
             line-height: 1.5;
         }
@@ -41,7 +41,6 @@
             z-index: 100;
         }
 
-        /* Logo section with Acharya Aniruddh branding */
         .logo-wrapper {
             display: flex;
             align-items: center;
@@ -209,7 +208,7 @@
             text-align: center;
         }
 
-        /* Google Ratings + Review Card */
+        /* google section, faq, astro-bio unchanged */
         .google-section {
             background: white;
             border-radius: 48px;
@@ -265,8 +264,6 @@
             font-style: italic;
             color: #2d241e;
         }
-
-        /* FAQ in Hindi */
         .faq-section {
             margin: 60px 0;
         }
@@ -321,8 +318,6 @@
         .faq-item.active .faq-question i {
             transform: rotate(180deg);
         }
-
-        /* astrologer bio + images - HINDI DESCRIPTION (as required) */
         .astro-bio {
             display: flex;
             flex-wrap: wrap;
@@ -418,7 +413,47 @@
             font-size: 0.8rem;
         }
 
-        /* Mobile responsive */
+        /* Page styles (Privacy, Terms, About, Contact) */
+        .page-container {
+            max-width: 900px;
+            margin: 60px auto;
+            background: white;
+            border-radius: 48px;
+            padding: 48px 40px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+            border: 1px solid #f0e4d8;
+        }
+        .page-container h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            color: #2c1a0c;
+        }
+        .page-container h2 {
+            font-size: 1.4rem;
+            margin: 24px 0 12px;
+            color: #b44d12;
+        }
+        .page-container p {
+            margin-bottom: 16px;
+            line-height: 1.6;
+            color: #3f3328;
+        }
+        .back-home {
+            display: inline-block;
+            margin-top: 32px;
+            background: #d96c2b;
+            color: white;
+            padding: 12px 28px;
+            border-radius: 60px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.2s;
+        }
+        .back-home:hover {
+            background: #b44d12;
+        }
+
         @media (max-width: 800px) {
             .container {
                 padding: 0 20px;
@@ -443,213 +478,248 @@
                 flex-direction: column;
                 gap: 30px;
             }
-            .form-title {
-                font-size: 1.5rem;
+            .nav-links.mobile-open {
+                display: flex;
+                flex-direction: column;
+                background: white;
+                position: absolute;
+                top: 75px;
+                right: 20px;
+                padding: 24px 28px;
+                border-radius: 28px;
+                box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+                gap: 18px;
+                border: 1px solid #f0e4d8;
+                z-index: 1000;
             }
-            .logo-text h1 {
-                font-size: 1.2rem;
-            }
-            .logo-icon {
-                width: 40px;
-                height: 40px;
-            }
-            .logo-icon i {
-                font-size: 20px;
-            }
-        }
-
-        /* when mobile menu opens */
-        .nav-links.mobile-open {
-            display: flex;
-            flex-direction: column;
-            background: white;
-            position: absolute;
-            top: 75px;
-            right: 20px;
-            padding: 24px 28px;
-            border-radius: 28px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
-            gap: 18px;
-            border: 1px solid #f0e4d8;
-            z-index: 1000;
-            width: auto;
-            min-width: 180px;
         }
         button:disabled {
             opacity: 0.7;
+        }
+        .hidden-page {
+            display: none;
+        }
+        #mainContent {
+            transition: 0.2s;
         }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <!-- Header / Navigation with Acharya Aniruddh Logo -->
-    <div class="navbar">
-        <div class="logo-wrapper">
-            <div class="logo-icon">
-                <i class="fas fa-star-of-life"></i>
-            </div>
-            <div class="logo-text">
-                <h1>आचार्य अनिरुद्ध</h1>
-                <p>VEDIC ASTROLOGER · KUNDLI EXPERT</p>
-            </div>
-        </div>
-        <ul class="nav-links" id="navLinks">
-            <li><a href="#">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#faq">FAQ (हिंदी)</a></li>
-            <li><a href="#contact-footer">Contact</a></li>
-        </ul>
-        <button class="mobile-menu" id="mobileMenuBtn" aria-label="Menu"><i class="fas fa-bars"></i></button>
-    </div>
-
-    <!-- Hero + Web3Form (name, phone) -->
-    <div class="hero">
-        <div class="hero-left">
-            <div class="rating-badge">
-                <span class="stars">★★★★★</span> <span>25+ Years · 50K+ Clients</span>
-            </div>
-            <h1>Transform Your Life with <span>Vedic Astrology</span></h1>
-            <p>Get precise remedies for career, marriage, finance, and health. Acharya Aniruddh offers holistic guidance based on ancient scriptures.</p>
-            <div class="stars" style="font-size: 1.2rem;">⭐ 4.9 / 5 · 2,580+ Google Reviews</div>
-        </div>
-        <div class="hero-right">
-            <div class="form-title">✨ Free Consultation</div>
-            <div class="form-sub">Share your details, we will reach you at an auspicious time</div>
-            <form id="web3form">
-                <div class="input-group">
-                    <input type="text" id="name" name="name" placeholder="Full Name *" required>
+<!-- Main Website Content -->
+<div id="mainContent">
+    <div class="container">
+        <div class="navbar">
+            <div class="logo-wrapper">
+                <div class="logo-icon">
+                    <i class="fas fa-star-of-life"></i>
                 </div>
-                <div class="input-group">
-                    <input type="tel" id="phone" name="phone" placeholder="Mobile Number *" required pattern="[0-9]{10}" title="10-digit mobile number">
+                <div class="logo-text">
+                    <h1>आचार्य अनिरुद्ध</h1>
+                    <p>VEDIC ASTROLOGER · KUNDLI EXPERT</p>
                 </div>
-                <button type="submit" class="btn-submit" id="submitBtn">Book Free Slot <i class="fas fa-arrow-right"></i></button>
-                <div id="formStatus" class="form-message"></div>
-                <p style="font-size: 11px; margin-top: 12px; text-align:center;">🔒 100% confidential & no spam</p>
-            </form>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#" data-page="home">Home</a></li>
+                <li><a href="#" data-page="about">About</a></li>
+                <li><a href="#" data-page="faq">FAQ (हिंदी)</a></li>
+                <li><a href="#" data-page="contact">Contact</a></li>
+            </ul>
+            <button class="mobile-menu" id="mobileMenuBtn" aria-label="Menu"><i class="fas fa-bars"></i></button>
+        </div>
+
+        <div class="hero">
+            <div class="hero-left">
+                <div class="rating-badge">
+                    <span class="stars">★★★★★</span> <span>25+ Years · 50K+ Clients</span>
+                </div>
+                <h1>Transform Your Life with <span>Vedic Astrology</span></h1>
+                <p>Get precise remedies for career, marriage, finance, and health. Acharya Aniruddh offers holistic guidance based on ancient scriptures.</p>
+                <div class="stars" style="font-size: 1.2rem;">⭐ 4.9 / 5 · 2,580+ Google Reviews</div>
+            </div>
+            <div class="hero-right">
+                <div class="form-title">✨ Free Consultation</div>
+                <div class="form-sub">Share your details, we will reach you at an auspicious time</div>
+                <form id="web3form">
+                    <div class="input-group">
+                        <input type="text" id="name" name="name" placeholder="Full Name *" required>
+                    </div>
+                    <div class="input-group">
+                        <input type="tel" id="phone" name="phone" placeholder="Mobile Number *" required pattern="[0-9]{10}" title="10-digit mobile number">
+                    </div>
+                    <button type="submit" class="btn-submit" id="submitBtn">Book Free Slot <i class="fas fa-arrow-right"></i></button>
+                    <div id="formStatus" class="form-message"></div>
+                    <p style="font-size: 11px; margin-top: 12px; text-align:center;">🔒 100% confidential & no spam</p>
+                </form>
+            </div>
+        </div>
+
+        <div class="google-section">
+            <div class="google-header">
+                <div class="google-logo">
+                    <i class="fab fa-google"></i>
+                    <span style="font-weight:600;">Google Rating</span>
+                </div>
+                <div>
+                    <span class="rating-number">4.9</span> <span class="review-stars">★★★★★</span>
+                    <div class="review-count">2,580+ Google reviews</div>
+                </div>
+            </div>
+            <div class="review-row">
+                <div class="review-card">
+                    <i class="fas fa-quote-left" style="color:#d96c2b; opacity:0.6;"></i>
+                    <p>“Accurate prediction, my business recovered within months! Highly recommended.”</p>
+                    <div class="stars">★★★★★</div>
+                    <small>— Rajesh K.</small>
+                </div>
+                <div class="review-card">
+                    <i class="fas fa-quote-left" style="color:#d96c2b; opacity:0.6;"></i>
+                    <p>“Marriage issues resolved smoothly. Genuine and compassionate guidance.”</p>
+                    <div class="stars">★★★★★</div>
+                    <small>— Sneha M.</small>
+                </div>
+                <div class="review-card">
+                    <i class="fas fa-quote-left" style="color:#d96c2b; opacity:0.6;"></i>
+                    <p>“Excellent remedies, positive changes in career. Truly grateful.”</p>
+                    <div class="stars">★★★★★</div>
+                    <small>— Vikram S.</small>
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-section" id="faq">
+            <div class="section-title">🙏 अक्सर पूछे जाने वाले सवाल (FAQ)</div>
+            <div class="faq-grid" id="faqContainer">
+                <div class="faq-item">
+                    <div class="faq-question">क्या ज्योतिष परामर्श पूर्णतः गोपनीय है? <i class="fas fa-chevron-down"></i></div>
+                    <div class="faq-answer">जी हाँ, आपकी निजी जानकारी और कुंडली को किसी के साथ साझा नहीं किया जाता। पूर्ण गोपनीयता हमारी प्रतिबद्धता है।</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">क्या मैं ऑनलाइन (वीडियो कॉल) परामर्श ले सकता हूँ? <i class="fas fa-chevron-down"></i></div>
+                    <div class="faq-answer">हाँ, भारत और विदेशों से वीडियो/फोन परामर्श उपलब्ध है। फॉर्म भरने के बाद हमारी टीम आपसे संपर्क करेगी।</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">पहली बार परामर्श निःशुल्क है? <i class="fas fa-chevron-down"></i></div>
+                    <div class="faq-answer">हाँ, 15 मिनट का प्रारंभिक परामर्श नि:शुल्क है। उसके बाद सेवा शुल्क साधारण है।</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">क्या आप जन्म कुंडली और वास्तु दोष दूर करते हैं?<i class="fas fa-chevron-down"></i></div>
+                    <div class="faq-answer">बिल्कुल। हम वैदिक ज्योतिष, ग्रह उपचार और वास्तु शास्त्र से संपूर्ण समाधान देते हैं।</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="astro-bio" id="about">
+            <div class="astro-img-gallery">
+                <img src="1.jpg">
+                <img src="2.jpg">
+                <img src="3.jpeg">
+            </div>
+            <div class="astro-desc">
+                <span class="badge-exp">⭐ 25+ वर्षों का अनुभव | ज्योतिष शिरोमणि पुरस्कार</span>
+                <h3>आचार्य अनिरुद्ध शास्त्री – परिचय एवं विशेषज्ञता</h3>
+                <p>आचार्य अनिरुद्ध ज्योतिष के क्षेत्र में तीसरी पीढ़ी के विद्वान हैं। उन्होंने काशी हिंदू विश्वविद्यालय से ज्योतिषाचार्य एवं साहित्य रत्न की उपाधि प्राप्त की है। पिछले 25 वर्षों से अधिक समय से वे देश-विदेश में ज्योतिषीय परामर्श दे रहे हैं।</p>
+                <p><strong>विशेषज्ञता:</strong> विवाह संबंधी समस्याएँ, करियर में रुकावट, व्यापार वृद्धि, ग्रह दोष निवारण, कुंडली मिलान, मांगलिक दोष, सर्प दोष, वास्तु शास्त्र और प्रश्न कुंडली।</p>
+                <p>आचार्य जी के उपाय सरल, प्रभावी और शास्त्रीय आधार पर आधारित होते हैं। उनका मानना है कि सही दिशा और ज्योतिषीय मार्गदर्शन से जीवन के हर क्षेत्र में सकारात्मक बदलाव लाया जा सकता है। हजारों ग्राहकों की सफलता की कहानियाँ उनकी सटीकता और ईमानदारी को साबित करती हैं।</p>
+                <p><i class="fas fa-star-of-life"></i> <strong>आज ही संपर्क करें और अपनी समस्याओं का स्थायी समाधान पाएं।</strong></p>
+            </div>
         </div>
     </div>
 
-    <!-- Google Ratings + reviews -->
-    <div class="google-section">
-        <div class="google-header">
-            <div class="google-logo">
-                <i class="fab fa-google"></i>
-                <span style="font-weight:600;">Google Rating</span>
+    <footer id="contact-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Acharya Aniruddh</h4>
+                    <p>Premium Vedic Astrologer, holistic solutions since 1998. Trusted worldwide.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#" data-page="home">Home</a></li>
+                        <li><a href="#" data-page="about">About Us</a></li>
+                        <li><a href="#" data-page="faq">FAQ (Hindi)</a></li>
+                        <li><a href="#" data-page="services">Services</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#" data-page="privacy">Privacy Policy</a></li>
+                        <li><a href="#" data-page="terms">Terms & Conditions</a></li>
+                        <li><a href="#" data-page="contact">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Info</h4>
+                    <p><i class="fas fa-phone-alt"></i> +91 98765 43210</p>
+                    <p><i class="fas fa-envelope"></i> connect@acharyaaniruddh.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Delhi, India (Online Worldwide)</p>
+                </div>
             </div>
-            <div>
-                <span class="rating-number">4.9</span> <span class="review-stars">★★★★★</span>
-                <div class="review-count">2,580+ Google reviews</div>
-            </div>
-        </div>
-        <div class="review-row">
-            <div class="review-card">
-                <i class="fas fa-quote-left" style="color:#d96c2b; opacity:0.6;"></i>
-                <p>“Accurate prediction, my business recovered within months! Highly recommended.”</p>
-                <div class="stars">★★★★★</div>
-                <small>— Rajesh K.</small>
-            </div>
-            <div class="review-card">
-                <i class="fas fa-quote-left" style="color:#d96c2b; opacity:0.6;"></i>
-                <p>“Marriage issues resolved smoothly. Genuine and compassionate guidance.”</p>
-                <div class="stars">★★★★★</div>
-                <small>— Sneha M.</small>
-            </div>
-            <div class="review-card">
-                <i class="fas fa-quote-left" style="color:#d96c2b; opacity:0.6;"></i>
-                <p>“Excellent remedies, positive changes in career. Truly grateful.”</p>
-                <div class="stars">★★★★★</div>
-                <small>— Vikram S.</small>
-            </div>
-        </div>
-    </div>
-
-    <!-- FAQ in Hindi Section -->
-    <div class="faq-section" id="faq">
-        <div class="section-title">🙏 अक्सर पूछे जाने वाले सवाल (FAQ)</div>
-        <div class="faq-grid" id="faqContainer">
-            <div class="faq-item">
-                <div class="faq-question">क्या ज्योतिष परामर्श पूर्णतः गोपनीय है? <i class="fas fa-chevron-down"></i></div>
-                <div class="faq-answer">जी हाँ, आपकी निजी जानकारी और कुंडली को किसी के साथ साझा नहीं किया जाता। पूर्ण गोपनीयता हमारी प्रतिबद्धता है।</div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question">क्या मैं ऑनलाइन (वीडियो कॉल) परामर्श ले सकता हूँ? <i class="fas fa-chevron-down"></i></div>
-                <div class="faq-answer">हाँ, भारत और विदेशों से वीडियो/फोन परामर्श उपलब्ध है। फॉर्म भरने के बाद हमारी टीम आपसे संपर्क करेगी।</div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question">पहली बार परामर्श निःशुल्क है? <i class="fas fa-chevron-down"></i></div>
-                <div class="faq-answer">हाँ, 15 मिनट का प्रारंभिक परामर्श नि:शुल्क है। उसके बाद सेवा शुल्क साधारण है।</div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question">क्या आप जन्म कुंडली और वास्तु दोष दूर करते हैं?<i class="fas fa-chevron-down"></i></div>
-                <div class="faq-answer">बिल्कुल। हम वैदिक ज्योतिष, ग्रह उपचार और वास्तु शास्त्र से संपूर्ण समाधान देते हैं।</div>
+            <div class="copyright">
+                © 2026 Acharya Aniruddh Astrology Center — All rights reserved | Accurate Vedic Guidance
             </div>
         </div>
-    </div>
-
-    <!-- About Astrologer in HINDI description with images -->
-    <div class="astro-bio" id="about">
-        <div class="astro-img-gallery">
-            <img src="https://placehold.co/300x350/FEFAF5/d96c2b?text=Acharya+Aniruddh" alt="Acharya Aniruddh portrait">
-            <img src="https://placehold.co/300x350/FEFAF5/b45f2b?text=Vedic+Puja" alt="Vedic ritual">
-            <img src="https://placehold.co/300x350/FEFAF5/9b4213?text=Spiritual+Guide" alt="Astrologer blessing">
-        </div>
-        <div class="astro-desc">
-            <span class="badge-exp">⭐ 25+ वर्षों का अनुभव | ज्योतिष शिरोमणि पुरस्कार</span>
-            <h3>आचार्य अनिरुद्ध शास्त्री – परिचय एवं विशेषज्ञता</h3>
-            <p>आचार्य अनिरुद्ध ज्योतिष के क्षेत्र में तीसरी पीढ़ी के विद्वान हैं। उन्होंने काशी हिंदू विश्वविद्यालय से ज्योतिषाचार्य एवं साहित्य रत्न की उपाधि प्राप्त की है। पिछले 25 वर्षों से अधिक समय से वे देश-विदेश में ज्योतिषीय परामर्श दे रहे हैं।</p>
-            <p><strong>विशेषज्ञता:</strong> विवाह संबंधी समस्याएँ, करियर में रुकावट, व्यापार वृद्धि, ग्रह दोष निवारण, कुंडली मिलान, मांगलिक दोष, सर्प दोष, वास्तु शास्त्र और प्रश्न कुंडली।</p>
-            <p>आचार्य जी के उपाय सरल, प्रभावी और शास्त्रीय आधार पर आधारित होते हैं। उनका मानना है कि सही दिशा और ज्योतिषीय मार्गदर्शन से जीवन के हर क्षेत्र में सकारात्मक बदलाव लाया जा सकता है। हजारों ग्राहकों की सफलता की कहानियाँ उनकी सटीकता और ईमानदारी को साबित करती हैं।</p>
-            <p><i class="fas fa-star-of-life"></i> <strong>आज ही संपर्क करें और अपनी समस्याओं का स्थायी समाधान पाएं।</strong></p>
-        </div>
-    </div>
+    </footer>
 </div>
 
-<!-- Footer with proper menu section and privacy, terms, contact -->
-<footer id="contact-footer">
-    <div class="container">
-        <div class="footer-grid">
-            <div class="footer-col">
-                <h4>Acharya Aniruddh</h4>
-                <p>Premium Vedic Astrologer, holistic solutions since 1998. Trusted worldwide.</p>
-            </div>
-            <div class="footer-col">
-                <h4>Quick Links</h4>
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#about">About Us</a></li>
-                    <li><a href="#faq">FAQ (Hindi)</a></li>
-                    <li><a href="#">Services</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>Legal</h4>
-                <ul>
-                    <li><a href="#" id="privacyLink">Privacy Policy</a></li>
-                    <li><a href="#" id="termsLink">Terms & Conditions</a></li>
-                    <li><a href="#" id="contactLink">Contact Us</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>Contact Info</h4>
-                <p><i class="fas fa-phone-alt"></i> +91 98765 43210</p>
-                <p><i class="fas fa-envelope"></i> connect@acharyaaniruddh.com</p>
-                <p><i class="fas fa-map-marker-alt"></i> Delhi, India (Online Worldwide)</p>
-            </div>
-        </div>
-        <div class="copyright">
-            © 2026 Acharya Aniruddh Astrology Center — All rights reserved | Accurate Vedic Guidance
-        </div>
-    </div>
-</footer>
+<!-- Separate Pages (Privacy, Terms, Contact, About) -->
+<div id="pagePrivacy" class="page-container hidden-page">
+    <h1>🔒 Privacy Policy</h1>
+    <p>At Acharya Aniruddh Astrology Center, your privacy is of utmost importance. This Privacy Policy explains how we collect, use, and safeguard your personal information when you visit our website or use our consultation services.</p>
+    <h2>Information We Collect</h2>
+    <p>We collect personal details such as your name, phone number, email address, and any information you voluntarily provide during consultations (including birth details for astrological analysis).</p>
+    <h2>How We Use Your Data</h2>
+    <p>Your information is used solely for astrological consultation, remedy recommendations, and to contact you regarding your inquiry. We do not sell, trade, or share your personal data with third parties for marketing purposes.</p>
+    <h2>Data Security</h2>
+    <p>We implement strict security measures to protect your data from unauthorized access, alteration, or disclosure. All communication remains confidential.</p>
+    <h2>Contact Us</h2>
+    <p>If you have any questions about this Privacy Policy, please reach out to connect@acharyaaniruddh.com.</p>
+    <a href="#" class="back-home" data-page="home">← Back to Home</a>
+</div>
 
-<!-- Web3Form & Interactions -->
+<div id="pageTerms" class="page-container hidden-page">
+    <h1>⚖️ Terms & Conditions</h1>
+    <p>By accessing and using the services of Acharya Aniruddh (website & consultations), you agree to comply with the following terms.</p>
+    <h2>Astrological Disclaimer</h2>
+    <p>The astrological predictions, remedies, and guidance provided are based on Vedic scriptures and the expertise of Acharya Aniruddh. Results may vary depending on individual karma, planetary transits, and free will. The consultation is for guidance and self-improvement purposes only; it is not a substitute for professional legal, financial, or medical advice.</p>
+    <h2>Consultation Fees & Payments</h2>
+    <p>Initial 15-minute consultation is free of charge. Subsequent sessions are subject to a nominal fee as communicated by our support team. All fees are non-refundable once a detailed consultation is delivered.</p>
+    <h2>User Responsibilities</h2>
+    <p>You agree to provide accurate information during consultation. Misrepresentation may affect the quality of astrological analysis.</p>
+    <h2>Modifications</h2>
+    <p>We reserve the right to update these terms at any time. Continued use of our services implies acceptance of the revised terms.</p>
+    <a href="#" class="back-home" data-page="home">← Back to Home</a>
+</div>
+
+<div id="pageContact" class="page-container hidden-page">
+    <h1>📞 Contact Us</h1>
+    <p>Have questions or wish to book a personalized Vedic astrology session? We're here to help!</p>
+    <h2>📍 Office & Virtual Support</h2>
+    <p><i class="fas fa-phone-alt"></i> <strong>Phone / WhatsApp:</strong> +91 98765 43210 (10 AM – 7 PM IST)</p>
+    <p><i class="fas fa-envelope"></i> <strong>Email:</strong> connect@acharyaaniruddh.com</p>
+    <p><i class="fas fa-map-marker-alt"></i> <strong>Address:</strong> Vedic Kendra, Lajpat Nagar, New Delhi - 110024, India (Online consultations available worldwide)</p>
+    <h2>🌐 Social & Support</h2>
+    <p>You can also reach us via the free consultation form on our homepage. Our team will respond within 24 hours.</p>
+    <p>For urgent astrological concerns, please mention "URGENT" in the subject when emailing.</p>
+    <a href="#" class="back-home" data-page="home">← Back to Home</a>
+</div>
+
+<div id="pageAboutExtra" class="page-container hidden-page">
+    <h1>🌟 About Acharya Aniruddh</h1>
+    <p>Acharya Aniruddh Shastri is a 3rd-generation Vedic astrologer with over 25 years of experience. He holds titles of Jyotishacharya and has been honored with the "Jyotish Shiromani" award. Specializing in relationship, career, financial, and health astrology, he combines ancient Vedic techniques with practical remedies.</p>
+    <p>His client base spans across India, USA, UK, Canada, UAE, and Australia. Thousands have found resolution in marriage delays, business hurdles, and spiritual growth through his authentic gemstone, mantra, and yantra recommendations.</p>
+    <p>Acharya ji believes that astrology is a science of light — understanding planetary influences helps navigate life’s challenges with clarity. Every consultation is treated with empathy and complete confidentiality.</p>
+    <a href="#" class="back-home" data-page="home">← Back to Home</a>
+</div>
+
 <script>
-    // Web3Form integration - Replace with your actual access key for production
+    // Web3Form integration using provided key: b81bb89c-a343-42c5-a89a-3310a6b27b6c
     const form = document.getElementById('web3form');
     const statusDiv = document.getElementById('formStatus');
     const submitBtn = document.getElementById('submitBtn');
-    const WEB3FORM_ACCESS_KEY = "8b79c5de-7273-45c7-9e99-cf6df974b580";  // working test key
+    const WEB3FORM_ACCESS_KEY = "b81bb89c-a343-42c5-a89a-3310a6b27b6c";  // Provided key
     
     form.addEventListener('submit', async (e) => {
         e.preventDefault();
@@ -693,9 +763,9 @@
         }
     });
     
-    // FAQ Accordion (Hindi)
+    // FAQ Accordion
     const faqItems = document.querySelectorAll('.faq-item');
-    faqItems.forEach((item, idx) => {
+    faqItems.forEach((item) => {
         const questionDiv = item.querySelector('.faq-question');
         questionDiv.addEventListener('click', () => {
             const isActive = item.classList.contains('active');
@@ -720,13 +790,64 @@
         });
     }
     
-    // Footer legal popups / simple modal
-    const privacy = document.getElementById('privacyLink');
-    const terms = document.getElementById('termsLink');
-    const contactLink = document.getElementById('contactLink');
-    if(privacy) privacy.addEventListener('click', (e) => { e.preventDefault(); alert("📜 Privacy Policy: Your personal information is kept confidential. We never share your data with third parties."); });
-    if(terms) terms.addEventListener('click', (e) => { e.preventDefault(); alert("⚖️ Terms & Conditions: Astrology consultations are for guidance. Results may vary based on individual karma and efforts."); });
-    if(contactLink) contactLink.addEventListener('click', (e) => { e.preventDefault(); alert("📞 Contact: Call +91 98765 43210 | Email: connect@acharyaaniruddh.com | Hours: 10 AM - 7 PM IST"); });
+    // Page router: show main website or separate legal pages
+    const mainContent = document.getElementById('mainContent');
+    const privacyPage = document.getElementById('pagePrivacy');
+    const termsPage = document.getElementById('pageTerms');
+    const contactPage = document.getElementById('pageContact');
+    const aboutExtraPage = document.getElementById('pageAboutExtra');
+    const pages = [privacyPage, termsPage, contactPage, aboutExtraPage];
+    
+    function showMainWebsite() {
+        mainContent.style.display = 'block';
+        pages.forEach(page => page.classList.add('hidden-page'));
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    
+    function showPage(pageElement) {
+        mainContent.style.display = 'none';
+        pages.forEach(page => page.classList.add('hidden-page'));
+        pageElement.classList.remove('hidden-page');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    
+    // attach router to all data-page links (including footer and nav & back buttons)
+    document.querySelectorAll('[data-page]').forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const pageId = link.getAttribute('data-page');
+            if (pageId === 'home') {
+                showMainWebsite();
+            } else if (pageId === 'privacy') {
+                showPage(privacyPage);
+            } else if (pageId === 'terms') {
+                showPage(termsPage);
+            } else if (pageId === 'contact') {
+                showPage(contactPage);
+            } else if (pageId === 'about') {
+                showPage(aboutExtraPage);
+            } else if (pageId === 'faq') {
+                showMainWebsite();
+                setTimeout(() => document.getElementById('faq')?.scrollIntoView({ behavior: 'smooth' }), 100);
+            } else if (pageId === 'services') {
+                alert("✨ For detailed services like Kundli matching, Vastu, and gemstone recommendation, please fill the free consultation form or call us.");
+            } else {
+                showMainWebsite();
+            }
+            if(mobileBtn && navLinks.classList.contains('mobile-open')) navLinks.classList.remove('mobile-open');
+        });
+    });
+    
+    // Ensure "About" link in nav opens about page
+    document.querySelectorAll('.nav-links a[data-page="about"]').forEach(ln => {
+        ln.addEventListener('click', (e) => {
+            e.preventDefault();
+            showPage(aboutExtraPage);
+        });
+    });
+    
+    // initial state: main visible
+    showMainWebsite();
 </script>
 </body>
 </html>
