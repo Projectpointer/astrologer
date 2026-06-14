@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>Pt. Ramakrishna Sharma | World Famous Astrologer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    <title>Acharya Aniruddh | World Famous Astrologer - Accurate Vedic Solutions</title>
     <!-- Google Fonts & Icons -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         * {
@@ -16,7 +16,7 @@
 
         body {
             font-family: 'Inter', sans-serif;
-            background: #ffffff;  /* changed to white */
+            background: #fefaf5;
             color: #1e1a16;
             line-height: 1.5;
         }
@@ -27,34 +27,62 @@
             padding: 0 24px;
         }
 
-        /* header / nav */
+        /* header / nav - mobile friendly */
         .navbar {
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 0;
+            padding: 16px 0;
             border-bottom: 1px solid #eae6e2;
+            background: #fefaf5;
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
 
-        .logo {
-            font-size: 1.8rem;
-            font-weight: 700;
-            background: linear-gradient(135deg, #bf7b3e, #9b4b1f);
+        /* Logo section with Acharya Aniruddh branding */
+        .logo-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .logo-icon {
+            background: linear-gradient(135deg, #d96c2b, #b44d12);
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 16px rgba(217,108,43,0.2);
+        }
+        .logo-icon i {
+            font-size: 26px;
+            color: white;
+        }
+        .logo-text h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #c85a1c, #9b4213);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
             letter-spacing: -0.3px;
+            line-height: 1.2;
         }
-        .logo span {
-            font-size: 1rem;
-            background: none;
-            color: #b1622c;
-            font-weight: 500;
+        .logo-text p {
+            font-size: 0.65rem;
+            letter-spacing: 1px;
+            font-weight: 600;
+            color: #b45f2b;
+            margin-top: 2px;
         }
+        
         .nav-links {
             display: flex;
-            gap: 32px;
+            gap: 28px;
             list-style: none;
         }
         .nav-links a {
@@ -62,14 +90,18 @@
             font-weight: 500;
             color: #2f2a26;
             transition: 0.2s;
+            font-size: 0.95rem;
         }
         .nav-links a:hover {
-            color: #b1622c;
+            color: #d96c2b;
         }
         .mobile-menu {
             display: none;
             font-size: 1.6rem;
             cursor: pointer;
+            background: none;
+            border: none;
+            color: #b44d12;
         }
 
         /* hero + form section */
@@ -77,7 +109,7 @@
             display: flex;
             flex-wrap: wrap;
             gap: 40px;
-            margin: 50px 0;
+            margin: 40px 0 60px;
             align-items: center;
         }
         .hero-left {
@@ -85,25 +117,31 @@
         }
         .hero-left h1 {
             font-size: 3rem;
-            font-weight: 700;
+            font-weight: 800;
             line-height: 1.2;
             margin-bottom: 20px;
-            color: #1f1b17;
+            font-family: 'Playfair Display', serif;
+            color: #2c1a0c;
+        }
+        .hero-left h1 span {
+            color: #d96c2b;
+            border-bottom: 3px solid #ffbc6e;
         }
         .hero-left p {
-            font-size: 1.1rem;
-            color: #4c3f34;
-            margin-bottom: 30px;
+            font-size: 1.05rem;
+            color: #5a4030;
+            margin-bottom: 25px;
         }
         .rating-badge {
             display: inline-flex;
             align-items: center;
-            background: #f8f4f0;
-            padding: 8px 16px;
+            background: #f0e7df;
+            padding: 8px 18px;
             border-radius: 60px;
             gap: 8px;
             margin-bottom: 25px;
-            font-weight: 500;
+            font-weight: 600;
+            color: #c85a1c;
         }
         .stars {
             color: #f5b342;
@@ -111,15 +149,15 @@
         }
         .hero-right {
             flex: 0.9;
-            background: #fefcf9;
-            border-radius: 32px;
+            background: white;
+            border-radius: 48px;
             padding: 32px 28px;
-            box-shadow: 0 20px 35px -12px rgba(0,0,0,0.06);
-            border: 1px solid #f0e8e0;
+            box-shadow: 0 25px 45px -12px rgba(0,0,0,0.12);
+            border: 1px solid #f0e4d8;
         }
         .form-title {
             font-size: 1.8rem;
-            font-weight: 600;
+            font-weight: 800;
             margin-bottom: 8px;
             color: #2d241e;
         }
@@ -133,32 +171,36 @@
         }
         .input-group input {
             width: 100%;
-            padding: 14px 18px;
-            border: 1px solid #e2d6cc;
-            border-radius: 48px;
+            padding: 14px 20px;
+            border: 1.5px solid #e6ddd2;
+            border-radius: 80px;
             font-size: 1rem;
             background: white;
             outline: none;
             transition: 0.2s;
         }
         .input-group input:focus {
-            border-color: #bf7b3e;
-            box-shadow: 0 0 0 2px rgba(191,123,62,0.2);
+            border-color: #d96c2b;
+            box-shadow: 0 0 0 3px rgba(217,108,43,0.1);
         }
         .btn-submit {
-            background: #b1622c;
+            background: #d96c2b;
             color: white;
             border: none;
             width: 100%;
             padding: 14px;
-            border-radius: 48px;
-            font-weight: 600;
+            border-radius: 80px;
+            font-weight: 700;
             font-size: 1rem;
             cursor: pointer;
             transition: 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
         }
         .btn-submit:hover {
-            background: #8e4a1d;
+            background: #b44d12;
             transform: scale(0.98);
         }
         .form-message {
@@ -169,12 +211,12 @@
 
         /* Google Ratings + Review Card */
         .google-section {
-            background: #ffffff;
-            border-radius: 36px;
+            background: white;
+            border-radius: 48px;
             padding: 32px 28px;
             margin: 50px 0;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.02);
-            border: 1px solid #ebe5df;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.03);
+            border: 1px solid #efe3d8;
         }
         .google-header {
             display: flex;
@@ -196,8 +238,8 @@
             color: #fbbc04;
         }
         .rating-number {
-            font-size: 2.5rem;
-            font-weight: 700;
+            font-size: 2.2rem;
+            font-weight: 800;
         }
         .review-stars {
             color: #f5b342;
@@ -214,8 +256,8 @@
         }
         .review-card {
             flex: 1;
-            background: #fefcf9;
-            border-radius: 24px;
+            background: #fffefc;
+            border-radius: 28px;
             padding: 20px;
             border: 1px solid #efe7e0;
         }
@@ -230,10 +272,11 @@
         }
         .section-title {
             font-size: 2rem;
-            font-weight: 700;
+            font-weight: 800;
             margin-bottom: 40px;
             text-align: center;
-            color: #1f1b17;
+            font-family: 'Playfair Display', serif;
+            color: #2c1a0c;
         }
         .faq-grid {
             display: flex;
@@ -242,24 +285,25 @@
         }
         .faq-item {
             background: white;
-            border-radius: 24px;
+            border-radius: 28px;
             border: 1px solid #e8dfd7;
             overflow: hidden;
         }
         .faq-question {
             background: #fefaf7;
             padding: 18px 24px;
-            font-weight: 600;
-            font-size: 1.1rem;
+            font-weight: 700;
+            font-size: 1.05rem;
             cursor: pointer;
             display: flex;
             justify-content: space-between;
             align-items: center;
             transition: 0.2s;
+            color: #a6440f;
         }
         .faq-question i {
             transition: 0.2s;
-            color: #b1622c;
+            color: #d96c2b;
         }
         .faq-answer {
             padding: 0 24px;
@@ -268,26 +312,27 @@
             transition: max-height 0.4s ease, padding 0.2s;
             background: #ffffff;
             color: #4c3f34;
-            line-height: 1.5;
+            line-height: 1.6;
         }
         .faq-item.active .faq-answer {
-            padding: 0 24px 20px 24px;
+            padding: 0 24px 22px 24px;
             max-height: 280px;
         }
         .faq-item.active .faq-question i {
             transform: rotate(180deg);
         }
 
-        /* astrologer bio + images (ENGLISH description) */
+        /* astrologer bio + images - HINDI DESCRIPTION (as required) */
         .astro-bio {
             display: flex;
             flex-wrap: wrap;
             gap: 40px;
-            background: #fefcf9;
+            background: white;
             border-radius: 48px;
             padding: 40px;
             margin: 50px 0;
             align-items: center;
+            border: 1px solid #efe1d4;
         }
         .astro-img-gallery {
             flex: 1;
@@ -297,36 +342,38 @@
             justify-content: center;
         }
         .astro-img-gallery img {
-            width: 160px;
-            height: 180px;
+            width: 140px;
+            height: 160px;
             object-fit: cover;
-            border-radius: 32px;
-            box-shadow: 0 12px 24px rgba(0,0,0,0.06);
+            border-radius: 28px;
+            box-shadow: 0 12px 24px rgba(0,0,0,0.08);
             border: 3px solid white;
+            background: #f0e7df;
         }
         .astro-desc {
             flex: 1.5;
         }
         .astro-desc h3 {
-            font-size: 1.9rem;
+            font-size: 1.8rem;
             margin-bottom: 16px;
-            color: #1f1b17;
+            font-family: 'Playfair Display', serif;
+            color: #2c1a0c;
         }
         .badge-exp {
             background: #f0e7e0;
             display: inline-block;
             padding: 6px 16px;
             border-radius: 40px;
-            font-size: 0.8rem;
-            font-weight: 600;
+            font-size: 0.75rem;
+            font-weight: 700;
             margin-bottom: 18px;
-            color: #7a533a;
+            color: #b44d12;
         }
 
         /* footer */
         footer {
-            background: #1e1915;
-            color: #cfc5bb;
+            background: #1f140c;
+            color: #eedbcb;
             margin-top: 80px;
             padding: 48px 0 24px;
             border-radius: 48px 48px 0 0;
@@ -343,9 +390,10 @@
             min-width: 150px;
         }
         .footer-col h4 {
-            color: #f2e2d2;
+            color: #ffcfaa;
             margin-bottom: 18px;
             font-size: 1.2rem;
+            font-weight: 700;
         }
         .footer-col ul {
             list-style: none;
@@ -355,19 +403,26 @@
         }
         .footer-col a {
             text-decoration: none;
-            color: #cfc5bb;
+            color: #dbbd9f;
             transition: 0.2s;
+            cursor: pointer;
         }
         .footer-col a:hover {
-            color: #daa06a;
+            color: #f2a65a;
+            padding-left: 5px;
         }
         .copyright {
             text-align: center;
-            border-top: 1px solid #2f2923;
+            border-top: 1px solid #36261b;
             padding-top: 28px;
             font-size: 0.8rem;
         }
+
+        /* Mobile responsive */
         @media (max-width: 800px) {
+            .container {
+                padding: 0 20px;
+            }
             .navbar .nav-links {
                 display: none;
             }
@@ -375,15 +430,50 @@
                 display: block;
             }
             .hero-left h1 {
-                font-size: 2.3rem;
+                font-size: 2.2rem;
+            }
+            .hero {
+                flex-direction: column;
             }
             .astro-bio {
                 flex-direction: column;
+                padding: 28px;
             }
             .footer-grid {
                 flex-direction: column;
                 gap: 30px;
             }
+            .form-title {
+                font-size: 1.5rem;
+            }
+            .logo-text h1 {
+                font-size: 1.2rem;
+            }
+            .logo-icon {
+                width: 40px;
+                height: 40px;
+            }
+            .logo-icon i {
+                font-size: 20px;
+            }
+        }
+
+        /* when mobile menu opens */
+        .nav-links.mobile-open {
+            display: flex;
+            flex-direction: column;
+            background: white;
+            position: absolute;
+            top: 75px;
+            right: 20px;
+            padding: 24px 28px;
+            border-radius: 28px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+            gap: 18px;
+            border: 1px solid #f0e4d8;
+            z-index: 1000;
+            width: auto;
+            min-width: 180px;
         }
         button:disabled {
             opacity: 0.7;
@@ -393,40 +483,49 @@
 <body>
 
 <div class="container">
-    <!-- Header / Navigation -->
+    <!-- Header / Navigation with Acharya Aniruddh Logo -->
     <div class="navbar">
-  <h1>आचार्य अनिरुद्ध</h1>
-                <p>VEDIC ASTROLOGER · KUNDLI EXPERT</p>        <ul class="nav-links">
+        <div class="logo-wrapper">
+            <div class="logo-icon">
+                <i class="fas fa-star-of-life"></i>
+            </div>
+            <div class="logo-text">
+                <h1>आचार्य अनिरुद्ध</h1>
+                <p>VEDIC ASTROLOGER · KUNDLI EXPERT</p>
+            </div>
+        </div>
+        <ul class="nav-links" id="navLinks">
             <li><a href="#">Home</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#faq">FAQ (हिंदी)</a></li>
             <li><a href="#contact-footer">Contact</a></li>
         </ul>
-        <div class="mobile-menu" id="mobileMenuBtn"><i class="fas fa-bars"></i></div>
+        <button class="mobile-menu" id="mobileMenuBtn" aria-label="Menu"><i class="fas fa-bars"></i></button>
     </div>
 
     <!-- Hero + Web3Form (name, phone) -->
     <div class="hero">
         <div class="hero-left">
             <div class="rating-badge">
-                <span class="stars">★★★★★</span> <span>5000+ Happy Clients</span>
+                <span class="stars">★★★★★</span> <span>25+ Years · 50K+ Clients</span>
             </div>
-            <h1>Accurate Astrological Solutions <br> For Life's Challenges</h1>
-            <p>Marriage, Career, Wealth, Health — precise guidance through Vedic astrology. 25+ years of experience.</p>
-            <div class="stars" style="font-size: 1.3rem;">⭐ 4.9 / 5 · 1,280+ Reviews</div>
+            <h1>Transform Your Life with <span>Vedic Astrology</span></h1>
+            <p>Get precise remedies for career, marriage, finance, and health. Acharya Aniruddh offers holistic guidance based on ancient scriptures.</p>
+            <div class="stars" style="font-size: 1.2rem;">⭐ 4.9 / 5 · 2,580+ Google Reviews</div>
         </div>
         <div class="hero-right">
-            <div class="form-title">✨ Book a Free Consultation</div>
-            <div class="form-sub">Fill the form, we will contact you within 24 hours</div>
+            <div class="form-title">✨ Free Consultation</div>
+            <div class="form-sub">Share your details, we will reach you at an auspicious time</div>
             <form id="web3form">
                 <div class="input-group">
-                    <input type="text" id="name" name="name" placeholder="Your Full Name *" required>
+                    <input type="text" id="name" name="name" placeholder="Full Name *" required>
                 </div>
                 <div class="input-group">
-                    <input type="tel" id="phone" name="phone" placeholder="Mobile Number *" required>
+                    <input type="tel" id="phone" name="phone" placeholder="Mobile Number *" required pattern="[0-9]{10}" title="10-digit mobile number">
                 </div>
                 <button type="submit" class="btn-submit" id="submitBtn">Book Free Slot <i class="fas fa-arrow-right"></i></button>
                 <div id="formStatus" class="form-message"></div>
+                <p style="font-size: 11px; margin-top: 12px; text-align:center;">🔒 100% confidential & no spam</p>
             </form>
         </div>
     </div>
@@ -440,81 +539,82 @@
             </div>
             <div>
                 <span class="rating-number">4.9</span> <span class="review-stars">★★★★★</span>
-                <div class="review-count">1,283 Google reviews</div>
+                <div class="review-count">2,580+ Google reviews</div>
             </div>
         </div>
         <div class="review-row">
             <div class="review-card">
-                <i class="fas fa-quote-left" style="color:#b1622c; opacity:0.6;"></i>
-                <p>“Incredibly accurate predictions. My business saw an amazing turnaround. Thank you Guruji.”</p>
+                <i class="fas fa-quote-left" style="color:#d96c2b; opacity:0.6;"></i>
+                <p>“Accurate prediction, my business recovered within months! Highly recommended.”</p>
                 <div class="stars">★★★★★</div>
-                <small>— Rakesh Singh</small>
+                <small>— Rajesh K.</small>
             </div>
             <div class="review-card">
-                <i class="fas fa-quote-left" style="color:#b1622c; opacity:0.6;"></i>
-                <p>“Marital issues resolved smoothly. Very supportive and positive experience.”</p>
+                <i class="fas fa-quote-left" style="color:#d96c2b; opacity:0.6;"></i>
+                <p>“Marriage issues resolved smoothly. Genuine and compassionate guidance.”</p>
                 <div class="stars">★★★★★</div>
-                <small>— Meeta Sharma</small>
+                <small>— Sneha M.</small>
             </div>
             <div class="review-card">
-                <i class="fas fa-quote-left" style="color:#b1622c; opacity:0.6;"></i>
-                <p>“Excellent guidance, timely remedies with great results. Highly satisfied.”</p>
+                <i class="fas fa-quote-left" style="color:#d96c2b; opacity:0.6;"></i>
+                <p>“Excellent remedies, positive changes in career. Truly grateful.”</p>
                 <div class="stars">★★★★★</div>
-                <small>— Ankit Verma</small>
+                <small>— Vikram S.</small>
             </div>
         </div>
     </div>
 
-    <!-- FAQ in Hindi Section (exactly as required) -->
+    <!-- FAQ in Hindi Section -->
     <div class="faq-section" id="faq">
-        <div class="section-title">अक्सर पूछे जाने वाले सवाल (FAQ)</div>
+        <div class="section-title">🙏 अक्सर पूछे जाने वाले सवाल (FAQ)</div>
         <div class="faq-grid" id="faqContainer">
             <div class="faq-item">
-                <div class="faq-question">ज्योतिष परामर्श कैसे लें? <i class="fas fa-chevron-down"></i></div>
-                <div class="faq-answer">आप ऊपर दिए गए फॉर्म में अपना नाम और फोन नंबर भरें। हमारी टीम 24 घंटे में आपसे संपर्क करेगी और ऑनलाइन/ऑफलाइन परामर्श की व्यवस्था करेगी।</div>
+                <div class="faq-question">क्या ज्योतिष परामर्श पूर्णतः गोपनीय है? <i class="fas fa-chevron-down"></i></div>
+                <div class="faq-answer">जी हाँ, आपकी निजी जानकारी और कुंडली को किसी के साथ साझा नहीं किया जाता। पूर्ण गोपनीयता हमारी प्रतिबद्धता है।</div>
             </div>
             <div class="faq-item">
-                <div class="faq-question">क्या मुफ्त परामर्श उपलब्ध है? <i class="fas fa-chevron-down"></i></div>
-                <div class="faq-answer">जी हाँ, प्रथम समस्या विश्लेषण निःशुल्क है। उसके बाद विस्तृत रिपोर्ट एवं उपाय शुल्क पर आधारित होते हैं।</div>
+                <div class="faq-question">क्या मैं ऑनलाइन (वीडियो कॉल) परामर्श ले सकता हूँ? <i class="fas fa-chevron-down"></i></div>
+                <div class="faq-answer">हाँ, भारत और विदेशों से वीडियो/फोन परामर्श उपलब्ध है। फॉर्म भरने के बाद हमारी टीम आपसे संपर्क करेगी।</div>
             </div>
             <div class="faq-item">
-                <div class="faq-question">कुंडली मिलान और ग्रह दोष निवारण में कितना समय लगता है? <i class="fas fa-chevron-down"></i></div>
-                <div class="faq-answer">सामान्यतः 2-3 कार्य दिवसों में रिपोर्ट तैयार हो जाती है। पूजा और उपाय के लिए मार्गदर्शन तुरंत दिया जाता है।</div>
+                <div class="faq-question">पहली बार परामर्श निःशुल्क है? <i class="fas fa-chevron-down"></i></div>
+                <div class="faq-answer">हाँ, 15 मिनट का प्रारंभिक परामर्श नि:शुल्क है। उसके बाद सेवा शुल्क साधारण है।</div>
             </div>
             <div class="faq-item">
-                <div class="faq-question">क्या आप वैदिक ज्योतिष के अनुसार उपाय बताते हैं? <i class="fas fa-chevron-down"></i></div>
-                <div class="faq-answer">बिल्कुल। हम शुद्ध वैदिक ज्योतिष एवं नक्षत्र पद्धति का पालन करते हैं। सभी उपाय सरल, प्रभावी और शास्त्र सम्मत होते हैं।</div>
+                <div class="faq-question">क्या आप जन्म कुंडली और वास्तु दोष दूर करते हैं?<i class="fas fa-chevron-down"></i></div>
+                <div class="faq-answer">बिल्कुल। हम वैदिक ज्योतिष, ग्रह उपचार और वास्तु शास्त्र से संपूर्ण समाधान देते हैं।</div>
             </div>
         </div>
     </div>
 
-    <!-- About Astrologer with images - ENGLISH DESCRIPTION (changed) -->
+    <!-- About Astrologer in HINDI description with images -->
     <div class="astro-bio" id="about">
         <div class="astro-img-gallery">
-            <!-- High-quality placeholder images representing the astrologer's ambiance -->
-            <img src="https://placehold.co/200x240/e8d5c0/7a4c2c?text=Pandit+Ji+1" alt="Astrologer portrait">
-            <img src="https://placehold.co/200x240/dbcbb8/5c3e2a?text=Vedic+Puja" alt="Astrologer performing puja">
-            <img src="https://placehold.co/200x240/cbbaa4/8b5a33?text=Spiritual+Guide" alt="Astrologer blessing">
+            <img src="https://placehold.co/300x350/FEFAF5/d96c2b?text=Acharya+Aniruddh" alt="Acharya Aniruddh portrait">
+            <img src="https://placehold.co/300x350/FEFAF5/b45f2b?text=Vedic+Puja" alt="Vedic ritual">
+            <img src="https://placehold.co/300x350/FEFAF5/9b4213?text=Spiritual+Guide" alt="Astrologer blessing">
         </div>
         <div class="astro-desc">
-            <span class="badge-exp">⭐ 25+ Years of Experience | Jyotish Shiromani Awardee</span>
-            <h3>Pandit Ramakrishna Sharma</h3>
-            <p>Pandit Ramakrishna Sharma is a globally renowned Vedic astrologer, vastu consultant, and karmakandi expert. With over 25 years of deep study and practice, he has successfully guided thousands of individuals across the world — resolving issues related to marriage delays, financial instability, career hurdles, health problems, and planetary doshas. His remedies are simple, effective, and rooted in authentic Vedic scriptures.</p>
-            <p style="margin-top: 12px;">He offers precise horoscope analysis, gemstone recommendations, mantra initiation, and vastu corrections. Many have experienced life-changing results under his spiritual mentorship. Pandit ji is available for both online and in-person consultations daily from 10 AM to 7 PM (IST). Fill the form above to book your free first analysis session.</p>
+            <span class="badge-exp">⭐ 25+ वर्षों का अनुभव | ज्योतिष शिरोमणि पुरस्कार</span>
+            <h3>आचार्य अनिरुद्ध शास्त्री – परिचय एवं विशेषज्ञता</h3>
+            <p>आचार्य अनिरुद्ध ज्योतिष के क्षेत्र में तीसरी पीढ़ी के विद्वान हैं। उन्होंने काशी हिंदू विश्वविद्यालय से ज्योतिषाचार्य एवं साहित्य रत्न की उपाधि प्राप्त की है। पिछले 25 वर्षों से अधिक समय से वे देश-विदेश में ज्योतिषीय परामर्श दे रहे हैं।</p>
+            <p><strong>विशेषज्ञता:</strong> विवाह संबंधी समस्याएँ, करियर में रुकावट, व्यापार वृद्धि, ग्रह दोष निवारण, कुंडली मिलान, मांगलिक दोष, सर्प दोष, वास्तु शास्त्र और प्रश्न कुंडली।</p>
+            <p>आचार्य जी के उपाय सरल, प्रभावी और शास्त्रीय आधार पर आधारित होते हैं। उनका मानना है कि सही दिशा और ज्योतिषीय मार्गदर्शन से जीवन के हर क्षेत्र में सकारात्मक बदलाव लाया जा सकता है। हजारों ग्राहकों की सफलता की कहानियाँ उनकी सटीकता और ईमानदारी को साबित करती हैं।</p>
+            <p><i class="fas fa-star-of-life"></i> <strong>आज ही संपर्क करें और अपनी समस्याओं का स्थायी समाधान पाएं।</strong></p>
         </div>
     </div>
 </div>
 
-<!-- Footer with proper menu section and privacy, terms, contact, about -->
+<!-- Footer with proper menu section and privacy, terms, contact -->
 <footer id="contact-footer">
     <div class="container">
         <div class="footer-grid">
             <div class="footer-col">
-                <h4>Vedic Astrologer</h4>
-                <p>Authentic Vedic astrology, vastu, and palmistry expert. 25+ years of dedicated service.</p>
+                <h4>Acharya Aniruddh</h4>
+                <p>Premium Vedic Astrologer, holistic solutions since 1998. Trusted worldwide.</p>
             </div>
             <div class="footer-col">
-                <h4>Menu</h4>
+                <h4>Quick Links</h4>
                 <ul>
                     <li><a href="#">Home</a></li>
                     <li><a href="#about">About Us</a></li>
@@ -528,43 +628,39 @@
                     <li><a href="#" id="privacyLink">Privacy Policy</a></li>
                     <li><a href="#" id="termsLink">Terms & Conditions</a></li>
                     <li><a href="#" id="contactLink">Contact Us</a></li>
-                    <li><a href="#" id="aboutLink">About Us</a></li>
                 </ul>
             </div>
             <div class="footer-col">
-                <h4>Contact</h4>
+                <h4>Contact Info</h4>
                 <p><i class="fas fa-phone-alt"></i> +91 98765 43210</p>
-                <p><i class="fas fa-envelope"></i> contact@astroramakrishna.com</p>
-                <p><i class="fas fa-map-marker-alt"></i> Jyotish Bhawan, Varanasi, India</p>
+                <p><i class="fas fa-envelope"></i> connect@acharyaaniruddh.com</p>
+                <p><i class="fas fa-map-marker-alt"></i> Delhi, India (Online Worldwide)</p>
             </div>
         </div>
         <div class="copyright">
-            © 2025 Pt. Ramakrishna Sharma — All rights reserved | Accurate Astrological Guidance
+            © 2026 Acharya Aniruddh Astrology Center — All rights reserved | Accurate Vedic Guidance
         </div>
     </div>
 </footer>
 
 <!-- Web3Form & Interactions -->
 <script>
-    // Web3Form integration (using fetch to official web3forms endpoint)
+    // Web3Form integration - Replace with your actual access key for production
     const form = document.getElementById('web3form');
     const statusDiv = document.getElementById('formStatus');
     const submitBtn = document.getElementById('submitBtn');
-    
-    // IMPORTANT: Replace with your actual Web3Forms Access Key from https://web3forms.com
-    // For demonstration, a placeholder key is used; you will need to sign up and replace this key.
-    const WEB3FORM_ACCESS_KEY = "d8e3b2a1-0c5e-4a2b-8c6d-9f1a2b3c4d5e";  // Replace with your live key
+    const WEB3FORM_ACCESS_KEY = "8b79c5de-7273-45c7-9e99-cf6df974b580";  // working test key
     
     form.addEventListener('submit', async (e) => {
         e.preventDefault();
         const name = document.getElementById('name').value.trim();
         const phone = document.getElementById('phone').value.trim();
         if (!name || !phone) {
-            statusDiv.innerHTML = '<span style="color:#c7362b;">Please enter your name and mobile number.</span>';
+            statusDiv.innerHTML = '<span style="color:#c7362b;">❌ Please enter your name and mobile number.</span>';
             return;
         }
-        if (phone.length < 8 || isNaN(phone)) {
-            statusDiv.innerHTML = '<span style="color:#c7362b;">Please enter a valid mobile number.</span>';
+        if (!/^\d{10}$/.test(phone)) {
+            statusDiv.innerHTML = '<span style="color:#c7362b;">❌ Please enter a valid 10-digit mobile number.</span>';
             return;
         }
         submitBtn.disabled = true;
@@ -575,7 +671,7 @@
         formData.append('access_key', WEB3FORM_ACCESS_KEY);
         formData.append('name', name);
         formData.append('phone', phone);
-        formData.append('subject', 'Astrologer Consultation Request');
+        formData.append('subject', 'Astrologer Consultation - Acharya Aniruddh');
         
         try {
             const response = await fetch('https://api.web3forms.com/submit', {
@@ -584,31 +680,27 @@
             });
             const result = await response.json();
             if (result.success) {
-                statusDiv.innerHTML = '<span style="color:#2e7d32;">✅ Thank you! We will contact you shortly. Blessings for your journey ahead.</span>';
+                statusDiv.innerHTML = '<span style="color:#2e7d32;">✅ Thank you! Our team will contact you shortly at an auspicious time.</span>';
                 form.reset();
             } else {
-                statusDiv.innerHTML = '<span style="color:#c7362b;">⚠️ Form submission issue. Please try again later or call us directly. (Web3Forms key might need update)</span>';
-                console.warn('Web3form error', result);
+                statusDiv.innerHTML = '<span style="color:#c7362b;">⚠️ Submission error. Please call us directly or try again.</span>';
             }
         } catch (error) {
-            statusDiv.innerHTML = '<span style="color:#c7362b;">Network error. Please check your internet and try again.</span>';
-            console.error(error);
+            statusDiv.innerHTML = '<span style="color:#c7362b;">⚠️ Network issue. Feel free to call us on +91 98765 43210.</span>';
         } finally {
             submitBtn.disabled = false;
-            submitBtn.innerHTML = 'Get Guidance Now <i class="fas fa-arrow-right"></i>';
+            submitBtn.innerHTML = 'Book Free Slot <i class="fas fa-arrow-right"></i>';
         }
     });
     
-    // FAQ Accordion (Hindi section)
+    // FAQ Accordion (Hindi)
     const faqItems = document.querySelectorAll('.faq-item');
-    faqItems.forEach(item => {
+    faqItems.forEach((item, idx) => {
         const questionDiv = item.querySelector('.faq-question');
         questionDiv.addEventListener('click', () => {
             const isActive = item.classList.contains('active');
             faqItems.forEach(i => i.classList.remove('active'));
-            if (!isActive) {
-                item.classList.add('active');
-            }
+            if (!isActive) item.classList.add('active');
         });
     });
     if(faqItems.length) faqItems[0].classList.add('active');
@@ -617,46 +709,24 @@
     const mobileBtn = document.getElementById('mobileMenuBtn');
     const navLinks = document.querySelector('.nav-links');
     if(mobileBtn) {
-        mobileBtn.addEventListener('click', () => {
-            if(navLinks.style.display === 'flex') {
-                navLinks.style.display = 'none';
-            } else {
-                navLinks.style.display = 'flex';
-                navLinks.style.flexDirection = 'column';
-                navLinks.style.backgroundColor = '#ffffff';
-                navLinks.style.position = 'absolute';
-                navLinks.style.top = '80px';
-                navLinks.style.right = '20px';
-                navLinks.style.padding = '20px';
-                navLinks.style.borderRadius = '24px';
-                navLinks.style.boxShadow = '0 8px 20px rgba(0,0,0,0.1)';
-                navLinks.style.zIndex = '999';
-                navLinks.style.gap = '16px';
-                navLinks.style.border = '1px solid #e2d6cc';
-            }
+        mobileBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            navLinks.classList.toggle('mobile-open');
         });
-        window.addEventListener('resize', () => {
-            if(window.innerWidth > 800) {
-                navLinks.style.display = '';
-                navLinks.style.flexDirection = '';
-                navLinks.style.position = '';
-                navLinks.style.backgroundColor = '';
-                navLinks.style.boxShadow = '';
-            } else if(navLinks.style.display === 'flex' && window.innerWidth > 800) {
-                navLinks.style.display = '';
+        document.addEventListener('click', (event) => {
+            if (!navLinks.contains(event.target) && !mobileBtn.contains(event.target) && navLinks.classList.contains('mobile-open')) {
+                navLinks.classList.remove('mobile-open');
             }
         });
     }
     
-    // Footer legal modals / popup info
+    // Footer legal popups / simple modal
     const privacy = document.getElementById('privacyLink');
     const terms = document.getElementById('termsLink');
     const contactLink = document.getElementById('contactLink');
-    const aboutLink = document.getElementById('aboutLink');
-    if(privacy) privacy.addEventListener('click', (e) => { e.preventDefault(); alert("📜 Privacy Policy: Your personal information is kept secure. We never share your data with third parties without your explicit consent."); });
-    if(terms) terms.addEventListener('click', (e) => { e.preventDefault(); alert("⚖️ Terms & Conditions: Astrology consultations are for guidance purposes. While we strive for accuracy, outcomes may vary based on individual karma and planetary movements."); });
-    if(contactLink) contactLink.addEventListener('click', (e) => { e.preventDefault(); alert("📞 Contact us: Call +91-9876543210 or email contact@astroramakrishna.com. Available 9 AM - 8 PM IST."); });
-    if(aboutLink) aboutLink.addEventListener('click', (e) => { e.preventDefault(); alert("🙏 Pandit Ramakrishna Sharma: Vedic astrology scholar, 25+ years experience. Guided thousands towards peace, prosperity, and clarity."); });
+    if(privacy) privacy.addEventListener('click', (e) => { e.preventDefault(); alert("📜 Privacy Policy: Your personal information is kept confidential. We never share your data with third parties."); });
+    if(terms) terms.addEventListener('click', (e) => { e.preventDefault(); alert("⚖️ Terms & Conditions: Astrology consultations are for guidance. Results may vary based on individual karma and efforts."); });
+    if(contactLink) contactLink.addEventListener('click', (e) => { e.preventDefault(); alert("📞 Contact: Call +91 98765 43210 | Email: connect@acharyaaniruddh.com | Hours: 10 AM - 7 PM IST"); });
 </script>
 </body>
 </html>
